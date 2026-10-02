@@ -9,7 +9,7 @@ A simple two-player Tic-Tac-Toe game built using only HTML, CSS, and JavaScript.
 
 ## How to Run
 1. Clone or download this repository.
-2. Open index.html in a web browser.
+2. Open index.html in any web browser.
 3. Start playing.
 
 ## How to Play
@@ -21,3 +21,6 @@ A simple two-player Tic-Tac-Toe game built using only HTML, CSS, and JavaScript.
 
 ## Technologies
 HTML5, CSS3, JavaScript
+
+## Deployment
+Hosted using GitHub Pages.
