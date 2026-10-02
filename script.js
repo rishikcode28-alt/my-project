@@ -7,15 +7,14 @@ let currentPlayer = "X";
 let gameOver = false;
 
 const winningCombinations = [
-  [0, 1, 2], [3, 4, 5], [6, 7, 8],
-  [0, 3, 6], [1, 4, 7], [2, 5, 8],
-  [0, 4, 8], [2, 4, 6]
+  [0,1,2], [3,4,5], [6,7,8],
+  [0,3,6], [1,4,7], [2,5,8],
+  [0,4,8], [2,4,6]
 ];
 
 cells.forEach(cell => {
   cell.addEventListener("click", () => {
     const index = cell.dataset.index;
-
     if (board[index] !== "" || gameOver) return;
 
     board[index] = currentPlayer;
@@ -39,23 +38,17 @@ cells.forEach(cell => {
 });
 
 function checkWinner() {
-  return winningCombinations.some(combination => {
-    const [a, b, c] = combination;
-    return board[a] !== "" &&
-           board[a] === board[b] &&
-           board[a] === board[c];
-  });
+  return winningCombinations.some(([a,b,c]) =>
+    board[a] !== "" && board[a] === board[b] && board[a] === board[c]
+  );
 }
 
 restartButton.addEventListener("click", restartGame);
 
 function restartGame() {
-  board = ["", "", "", "", "", "", "", "", ""];
+  board = ["", "", "", "", "", "", "", ""];
   currentPlayer = "X";
   gameOver = false;
   statusText.textContent = "Player X's turn";
-
-  cells.forEach(cell => {
-    cell.textContent = "";
-  });
+  cells.forEach(cell => cell.textContent = "");
 }
